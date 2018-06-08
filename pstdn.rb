@@ -4,8 +4,6 @@ MASTODON_HOST = 'https://mstdn.jp'      #この中身変えればインスタン
 
 connection = Mastodon::REST::Client.new(base_url: MASTODON_HOST, bearer_token: ENV['MASTODON_ACCESS_TOKEN'])
 
-
-
 print "** 接続に成功しました **\n"
 print "** クライアントを終了させたい場合は 'exit' と入力して改行したのち、 Ctrl+D を叩いて下さい。 **\n"
 
@@ -17,8 +15,11 @@ loop{
         break
     end
 
-    connection.create_status(imput_Text.join)
-
-    print "** Tooted. **\n" + imput_Text.join + "\n"
-
+    if imput_Text.join =~ /^.*!Clear.*\n/ || imput_Text.join =~ /^.*!clear.*\n/         #入力文字列の中に!Clear(大文字小文字判別しない)が含まれた場合
+                                                                                        #トゥートごとキャンセルしてコマンドラインもきれいにする
+        system ('clear')
+    else
+        connection.create_status(imput_Text.join)
+        print "** Tooted. **\n" + imput_Text.join + "\n"
+    end
 }
