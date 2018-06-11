@@ -19,7 +19,7 @@ loop{
     if input_Text.join =~ /^.*!Clear.*\n/ || input_Text.join =~ /^.*!clear.*\n/         #入力文字列の中に!Clear(大文字小文字判別しない)が含まれた場合
         system ('clear')                                                                #トゥートごとキャンセルしてコマンドラインもきれいにする
     else
-        connection.create_status(imput_Text.join)
-        print "** Tooted. **\n" + imput_Text.join + "\n"
+        connection.create_status(input_Text.join)
+        print "** Tooted. **\n" + input_Text.join + "\n"
     end
 }
