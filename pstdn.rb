@@ -2,10 +2,12 @@ require 'mastodon'
 
 MASTODON_HOST = 'https://mstdn.jp'      #この中身変えればインスタンス変更できます。サポートはしませんがご自由にどうぞ
 
+system ('clear')                                                                #トゥートごとキャンセルしてコマンドラインもきれいにする
+
 connection = Mastodon::REST::Client.new(base_url: MASTODON_HOST, bearer_token: ENV['MASTODON_ACCESS_TOKEN'])
 
 print "** 接続に成功しました **\n"
-print "** クライアントを終了させたい場合は 'exit' と入力して改行したのち、 Ctrl+D を叩いて下さい。 **\n"
+print "** クライアントを終了させたい場合は 'exit' と入力して改行したのち、 Ctrl+D を叩いて下さい **\n"
 
 loop{    
     print "text>>"
