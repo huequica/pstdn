@@ -22,7 +22,7 @@
 ```Bash
 $ export MASTODON_ACCESS_TOKEN='INSERT ACCESS_TOKEN TO HERE'
 ```
-・インスタンス変えたければスクリプトの中の'MASTODON_HOST'の変数の中身を書き換えて下さい。デフォはhttps://mstdn.jp です<br>
+・インスタンス変えたければスクリプトの中の'MASTODON_HOST'の変数の中身を書き換えて下さい。デフォは https://mstdn.jp です<br>
 ```ruby
 require 'mastodon'
 
@@ -41,5 +41,7 @@ MASTODON_HOST = 'https://mstdn.jp'
 <br>
 
 # 更新履歴<br>
+2018/06/14 (Thu) Ver0.55 出力の際の一部メソッド、及び出力の際のソース変更<br>
+起動の際にログインしているインスタンスを表示するように<br>
 2018/06/09 (Fri) Ver0.53 トゥート文面キャンセルを兼ねたコマンドラインを掃除する機能(!Clearのやつ)実装<br>
 2018/06/07 (Thu) 初版公開、ver0.50とでもしておきます
