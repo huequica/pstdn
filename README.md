@@ -24,8 +24,6 @@ $ export MASTODON_ACCESS_TOKEN='INSERT ACCESS_TOKEN TO HERE'
 ```
 ・インスタンス変えたければスクリプトの中の'MASTODON_HOST'の変数の中身を書き換えて下さい。デフォは https://mstdn.jp です<br>
 ```ruby
-require 'mastodon'
-
 MASTODON_HOST = 'https://mstdn.jp'
 #この中身変えればインスタンス変更できます。サポートはしませんがご自由にどうぞ
 ```
@@ -38,19 +36,18 @@ MASTODON_HOST = 'https://mstdn.jp'
 ## 基本<br>
 基本的にはトゥートしたい文面を打ち込んで改行したのち、Ctrl+Dを叩くことでトゥートされます。<br>
 ただし以下のオプションが存在します。<br>
-
 ## 1行目のみ有効のオプション<br>
-```bash
+```
 !CW [CWに挿入する文章]
 ```
 1行目の行頭からこのように記述することでCWをつけることができます。<br>
 1行目の行頭以外で書くと無視されますので注意してください。<br>
-```bash
+```
 exit
 ```
 exitと入力してCtrl+Dをすると終了します。<br><br>
 ## どこでも有効のオプション<br>
-```bash
+```
 〜〜〜!Clear
 ```
 入力しているトゥート文面を消します。誤字ったときなどにどうぞ。
