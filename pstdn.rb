@@ -21,7 +21,6 @@ request.add_field('Authorization', "Bearer #{access_token}")
 loop{    
     print "text>>"
     input_Text = readlines
-    $CW_flag = nil
 
     if input_Text.join == "" then
         puts "\n** なにも入力されていません。文字列を入力してからCtrl+Dを叩いてください。 **\n"
@@ -33,12 +32,14 @@ loop{
         end
 
         if input_Text[0] =~ /^.*!CW .*\n/
-            $CW_flag = true
+
+            cw_flag = true
             input_Text[0].slice!(/\A!CW /)
-            CW_text = input_Text[0]
+            cw_text = input_Text[0]
             input_Text.delete_at(0)
+            
         else
-            $CW_flag = false
+            cw_flag = false
         end
 
         
@@ -47,8 +48,8 @@ loop{
         else
             toot_body = 'status=' + input_Text.join
             #CWの有無で分岐する
-            if $CW_flag == true then
-                toot_body += '&spoiler_text=' + CW_text
+            if cw_flag == true then
+                toot_body += '&spoiler_text=' + cw_text
             end
 
             request.body = toot_body
