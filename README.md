@@ -1,7 +1,7 @@
 # pstdn<br>
 ポストドン。スクリプト経由でmastodonに文字列トゥートできます(るび〜処女作)<br>
 <br>
-![DeskTop](https://media.mstdn.jp/images/media_attachments/files/007/128/492/original/173636c6e2831afb.png)
+![DeskTop](https://media.mstdn.jp/images/media_attachments/files/007/476/557/original/cf10b3c1b6a3f595.png)
 
 # なにこれ？<br>
 察して下さい<br>
@@ -57,6 +57,12 @@ exitと入力してCtrl+Dをすると終了します。<br><br>
 入力しているトゥート文面を消します。誤字ったときなどにどうぞ。
 <br>
 
+```
+!visiv
+```
+!visivと入れるとトゥート処理直前に公開範囲を聞いてきます。行頭以外で書くと無視しますので注意してください。<br>
+<br>
+
 # 注意事項
 プロキシを通していると一生待機状態のまま動かない状態に陥ります。<br>
 gemのネットワーク設定が自動のままであることが原因っぽいので、その場合はお手数ですが環境変数を追加で2つ設定してください。
@@ -67,6 +73,7 @@ $ export https_proxy='ADDRESS:PORT NUMBER'
 ```
 
 # 更新履歴<br>
+2018/09/06 (Thr) Ver0.70 公開範囲設定を実装、正規表現まわりの仕様を変更<br>
 2018/08/26 (Sun) Ver0.66 謎のエラーを無理やり消していたけど原因が判明したので該当部分を修正<br>
 2018/08/24 (Fri) Ver0.65 curlを解雇してhttpから直接叩く方式に変更、トゥートの結果表示を再度実装<br>
 2018/08/22 (Wen) Ver0.60 CW実装、およびmastodon-apiを使用しない方向に変更<br>

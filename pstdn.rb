@@ -1,6 +1,36 @@
 require 'net/http'
 require 'uri'
 
+#################################################################################
+#########################      定義メソッド置き場      #############################
+#################################################################################
+def visiv_select()
+    
+    puts '0 public'
+    puts '1 private'
+    puts '2 unlisted'
+    puts '3 direct(recomennd to use Reply only)'
+    print '番号を入力してください >>'
+    visiv_param = ['public', 'private', 'unlisted', 'direct']
+
+    loop do 
+        number = readline.to_i
+        if number.between?(0, 3) then
+            return visiv_param[number]
+            break
+        else
+            print '正しい値を入れてください>>'
+        end
+    end
+    
+
+end
+
+
+
+#################################################################################
+#########################      main Method      #################################
+
 MASTODON_HOST = 'https://mstdn.jp'      #この中身変えればインスタンス変更できます。サポートはしませんがご自由にどうぞ
 
 system ('clear')                        #起動時にコマンドラインキレイキレイに
@@ -41,16 +71,26 @@ loop{
         else
             cw_flag = false
         end
+            
+        if input_Text.index{|item| item =~ /^!visiv/i} then
+            visiv_row = input_Text.index{|item| item =~ /^!visiv/i}
+            input_Text.delete_at(visiv_row)
+            visiv_flag = true
+        end
 
-        
-        if input_Text.join =~ /^.*!Clear.*\n/ || input_Text.join =~ /^.*!clear.*\n/         #入力文字列の中に!Clear(大文字小文字判別しない)が含まれた場合
-            system ('clear')                                                                #トゥートごとキャンセルしてコマンドラインもきれいにする
+        if input_Text.join =~ /^.*!Clear.*\n/i       #入力文字列の中に!Clear(大文字小文字判別しない)が含まれた場合
+            system ('clear')                         #トゥートごとキャンセルしてコマンドラインもきれいにする
         else
             toot_body = 'status=' + input_Text.join
             #CWの有無で分岐する
             if cw_flag == true then
                 toot_body += '&spoiler_text=' + cw_text
             end
+
+            if visiv_flag then
+                toot_body += '&visibility=' + visiv_select
+            end
+
 
             request.body = toot_body
             response = http.request(request)
