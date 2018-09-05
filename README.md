@@ -1,7 +1,7 @@
 # pstdn<br>
 ポストドン。スクリプト経由でmastodonに文字列トゥートできます(るび〜処女作)<br>
 <br>
-![DeskTop](https://media.mstdn.jp/images/media_attachments/files/007/476/557/original/cf10b3c1b6a3f595.png)
+![Desktop](https://media.mstdn.jp/images/media_attachments/files/007/476/557/original/cf10b3c1b6a3f595.png)
 
 # なにこれ？<br>
 察して下さい<br>
