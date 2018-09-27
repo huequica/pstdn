@@ -10,12 +10,13 @@ def visiv_select()
     puts '1 private'
     puts '2 unlisted'
     puts '3 direct(recomennd to use Reply only)'
+    puts '4 Canncel'
     print '番号を入力してください >>'
-    visiv_param = ['public', 'private', 'unlisted', 'direct']
+    visiv_param = ['public', 'private', 'unlisted', 'direct', false]
 
     loop do 
         number = readline.to_i
-        if number.between?(0, 3) then
+        if number.between?(0, 4) then
             return visiv_param[number]
             break
         else
@@ -88,6 +89,10 @@ loop{
             end
 
             if visiv_flag then
+                visiv_set = visiv_select()
+                if visiv_set == false then
+                    next
+                end
                 toot_body += '&visibility=' + visiv_select
             end
 
