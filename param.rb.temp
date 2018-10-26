@@ -1,0 +1,8 @@
+#   name    : インスタンスのドメイン
+#   token   : インスタンスで取得したアクセストークン
+#   default : pstdnの起動時に設定するインスタンス、boolで指定すること
+
+$auth_data = [
+    {"name" => "", "token" => "", "default" => true},
+    {"name" => "", "token" => "", "default" => false }
+]
