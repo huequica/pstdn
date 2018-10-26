@@ -23,13 +23,13 @@ $ gem list | grep "http"
 # 下準備
 
 1. アクセストークン取って、```param.rb.temp```というファイルに情報を書きます  
-複数ある場合は行ごとコピーして上書きしてください
+複数ある場合は行ごとコピーして上書きしてください
 
 ```Bash
 $ vim param.rb.temp
 ```
 
-2. ```param.rb.temp```のファイル名を```param.rb```に変更
+2. ```param.rb.temp```のファイル名を```param.rb```に変更
 
 ```Bash
 $ mv param.rb.temp param.rb
@@ -55,7 +55,7 @@ exit
 ```
 set_inst
 ```
-トゥートを送信するインタンスを変更します。  
+トゥートを送信するインタンスを変更します。  
 ## どこでも有効のオプション
 ```
 〜〜〜!Clear
