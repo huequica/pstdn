@@ -9,8 +9,8 @@ def visiv_select()
   puts '0 public'
   puts '1 private'
   puts '2 unlisted'
-  puts '3 direct(recomennd to use Reply only)'
-  puts '4 Canncel'
+  puts '3 direct(recommend to use Reply only)'
+  puts '4 Cancel'
   print '番号を入力してください >>'
   visiv_param = ['public', 'private', 'unlisted', 'direct', false]
 
